@@ -1,6 +1,17 @@
 <?php
 class Continent{
+    /**
+     * numero du continent
+     *
+     * @var int
+     */
     private $num;
+
+    /**
+     * libelle du continent
+     *
+     * @var string
+     */
     private $libelle;
 
     /**
@@ -10,9 +21,31 @@ class Continent{
     {
         return $this->num;
     }
-    // vidéo 2
-    // 2:59
+
+
+    /**
+     * Get the value of libelle
+     */ 
+    public function getLibelle()
+    {
+        return $this->libelle;
+    }
+
+    /**
+     * Set the value of libelle
+     *
+     * @return  self
+     */ 
+    public function setLibelle($libelle)
+    {
+        $this->libelle = $libelle;
+
+        return $this;
+    }
 }
+
+// video 2
+// 4:58
 
 
 
