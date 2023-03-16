@@ -29,7 +29,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
-  <a class="navbar-brand pl-5" href="#">Ma Bibliothèque</a>
+  <a class="navbar-brand pl-5" href="index.php?">Ma Bibliothèque</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -58,6 +58,30 @@
           <a class="dropdown-item" href="formAjoutNationalite.php">Ajouter une nationalité</a>
         </div>
       </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gestion des continents</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="index.php?uc=continents&action=liste">Liste des continents</a>
+          <a class="dropdown-item" href="#">Ajouter un continents</a>
+        </div>
+      </li>
     </ul>
   </div>
 </nav>
+<?php
+if(!empty($_SESSION['message'])){
+    $mesMessages=$_SESSION['message'];
+    foreach($mesMessages as $key=>$message){
+        echo '<div class="container pt-5" >
+                <div class="alert alert-'.$key.' alert-dismissible fade show" role="alert">'.$message.'    
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>';
+    }
+    $_SESSION['message']=[];
+
+}
+
+?>

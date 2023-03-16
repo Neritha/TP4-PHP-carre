@@ -1,14 +1,17 @@
-<?php session_start(); ?>
-<?php include "vues/header.php"; ?>
-<?php
+<?php session_start();
+include "vues/header.php";
+include "models/continent.php";
+include "models/monPdo.php";
 
-$un = empty($_GET['uc']) ? "accueil" : $_GET['uc'];
+
+$uc = empty($_GET['uc']) ? 'accueil' : $_GET['uc'];
 
 switch($uc){
     case 'accueil':
         include('vues/accueil.php');
         break;
     case 'continents' :
+        include('controllers/continentController.php');
         break;
 }
 

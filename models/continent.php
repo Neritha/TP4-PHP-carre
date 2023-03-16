@@ -24,28 +24,105 @@ class Continent{
 
 
     /**
-     * Get the value of libelle
-     */ 
-    public function getLibelle()
-    {
-        return $this->libelle;
-    }
+     * lit le libellé
+     *
+     * @return string
+     */
+        public function getLibelle() : string
+        {
+            return $this->libelle;
+        }
 
     /**
-     * Set the value of libelle
+     * ecrit dans le liebellé
      *
-     * @return  self
-     */ 
-    public function setLibelle($libelle)
+     * @param string $libelle
+     * @return self
+     */
+    public function setLibelle(string $libelle) : self
     {
         $this->libelle = $libelle;
 
         return $this;
     }
+
+    /**
+     * Returne l'ensemble des continents
+     *
+     * @return Continent[] tableau d'objet continent
+     */
+    public static function findAll() :array //pour dir que la fonction renvoie un tableau
+    {  
+        $req=MonPdo::getInstance()->prepare('Select * from continent');
+        $req->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,'Continent');
+        $req->execute(); 
+        $lesResultats=$req->fethAll();
+        return $lesResultats;
+    } 
+
+
+    /**
+     * trouve un continent par sont num
+     *
+     * @param integer $id numéro du continent
+     * @return Continent objet continent trouvé
+     */
+    public static function findById (int $id) :Continent
+    {
+        $req=MonPdo::getInstance()->prepare('Select * from continent where num= :id');
+        $req->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,'Continent');
+        $req->binParam(':id', $id);
+        $req->execute(); 
+        $leResultat=$req->feth();
+        return $leResultat;
+    }
+
+    /**
+     * permet d'ajouter un continant
+     *
+     * @param Continent $continant continent à ajouter
+     * @return integer resultat (1si l'operation a reussi, 0 sinon)
+     */
+    public static function add(Continent $continent) :int
+    {
+        $req=MonPdo::getInstance()->prepare('insert into continent (libelle) values(:libelle)');
+        $req->binParam(':libelle', $continent->getLibelle());
+        $nb=$req->execute(); 
+        return $nb;
+    }
+    
+    /**
+     * permet de mofifier un continent
+     *
+     * @param Continent $continent continent à modifier
+     * @return integer resultat (1si l'operation a reussi, 0 sinon)
+     */
+    public static function update(Continent $continent) :int
+    {
+        $req=MonPdo::getInstance()->prepare('update continent set libelle= : libelle where num= :id');
+        $req->binParam(':id', $continent->getNum());
+        $req->binParam(':libelle', $continent->getLibelle());
+        $nb=$req->execute(); 
+        return $nb;
+    }
+            // video 3 
+            // 5:30
+    /**
+     * supprimer un continent
+     *
+     * @param Continent $continent
+     * @return integer
+     */
+    public static function delete(Continent $continent) :int
+    {
+        $req=MonPdo::getInstance()->prepare('delete from continent where num= :id');
+        $req->binParam(':id', $continent->getNum());
+        $nb=$req->execute(); 
+        return $nb;
+    }
 }
 
-// video 2
-// 4:58
+
 
 
 
