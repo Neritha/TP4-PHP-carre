@@ -54,14 +54,14 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-flag"></i>  Gestion des nationalités</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="listeNationalites.php">Liste des nationalités</a>
+          <a class="dropdown-item" href="index.php?uc=continent&effet=liste">Liste des nationalités</a>
           <a class="dropdown-item" href="formAjoutNationalite.php">Ajouter une nationalité</a>
         </div>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gestion des continents</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="index.php?uc=continents&action=liste">Liste des continents</a>
+          <a class="dropdown-item" href="index.php?uc=continent&action=liste">Liste des continents</a>
           <a class="dropdown-item" href="index.php?uc=continent&action=add">Ajouter un continents</a>
         </div>
       </li>

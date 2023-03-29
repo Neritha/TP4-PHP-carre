@@ -7,7 +7,7 @@
 class MonPdo
 {
 
-private static $serveur='mysql:host=btssio.dedyn.io';
+private static $serveur='mysql:host=btsio.dedyn.io';
 private static $bdd='dbname=CARREVIC_biblio'; 
 private static $user='CARREVIC' ; 
 private static $mdp='16/01/2004' ;
@@ -21,6 +21,9 @@ private function __construct()
     MonPdo::$unPdo = new PDO(MonPdo::$serveur.';'.MonPdo::$bdd, MonPdo::$user, MonPdo::$mdp);
     MonPdo::$unPdo->query("SET CHARACTER SET utf8");
     MonPdo::$unPdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    //MonPdo::$unPdo = new PDO(MonPdo::$serveur.';'.MonPdo::$bdd, MonPdo::$user, MonPdo::$mdp);
+    //MonPdo::$unPdo->query("SET CHARACTER SET utf8");
+    //MonPdo::$unPdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 public function __destruct()
 { 
@@ -29,7 +32,7 @@ public function __destruct()
 /**
 *	Fonction statique qui cree l'unique instance de la classe
 * Appel : $instanceMonPdo = MonPdo::getMonPdo();
-*	@return l'unique objet de la classe MonPdo
+*	@return //l'unique objet de la classe MonPdo
 */
 public static function getInstance()
 {

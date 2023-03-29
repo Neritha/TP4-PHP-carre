@@ -4,7 +4,7 @@ session_start();
 
 include "vues/header.php";
 include "models/continent.php";
-//include "models/nationalite.php";  [pour la video 5]
+include "models/nationalite.php"; 
 include "models/monPdo.php";
 include "vues/messagesFlash.php";
 
@@ -14,12 +14,12 @@ switch($uc){
     case 'accueil':
         include('vues/accueil.php');
         break;
-    case 'continents' :
+    case 'continent' :
         include('controllers/continentController.php');
         break;
-    //case 'nationalite':
-      //  include ('controllers/nationaliteController.php');
-        //break();    [ pour la video 5]
+    case 'nationalite':
+        include ('controllers/nationaliteController.php');
+        break;    
 }
 
 include "vues/footer.php"; 
