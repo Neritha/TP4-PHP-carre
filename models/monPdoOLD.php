@@ -29,7 +29,7 @@ public function __destruct()
 /**
 *	Fonction statique qui cree l'unique instance de la classe
 * Appel : $instanceMonPdo = MonPdo::getMonPdo();
-*	@return l'unique objet de la classe MonPdo
+*	@return //l'unique objet de la classe MonPdo
 */
 public static function getInstance()
 {
@@ -42,5 +42,3 @@ public static function getInstance()
 
 }
 ?>
-
-<!--checke-->

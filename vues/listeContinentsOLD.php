@@ -46,8 +46,8 @@
             <a href='#modalSuppression' data-toggle='modal' data-message='Voulez vous supprimer le continent ?' data-suppression='index.php?uc=continent&action=delete&num=".$continent->getNum()."' class='btn btn-danger'><i class='far fa-trash-alt'></i></a>
         </td>";
         echo "</tr>";
-    }
 
+    }
     ?>
         
     </tbody>

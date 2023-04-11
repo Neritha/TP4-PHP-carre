@@ -1,23 +1,23 @@
 <?php 
 
-class Continent 
+class Genre 
     {
 
         /**
-         * Numéro du Continent
+         * Numéro du Genre
          *
          * @var int
          */
         private $num;
         /**
-         * Libelle du Continent
+         * Libelle du Genre
          *
          * @var string
          */
         private $libelle;
         
         /**
-         * Lit le Numero du Continent
+         * Lit le Numero du Genre
          *
          * @return integer
          */
@@ -27,7 +27,7 @@ class Continent
         }
 
          /**
-         * Set numéro du Continent
+         * Set numéro du Genre
          */
         public function setNum(int $num): self
         {
@@ -60,29 +60,29 @@ class Continent
         }
 
         /**
-         * Retourne l'ensemble des continent
+         * Retourne l'ensemble des genres
          *
-         * @return Continent[] tableau d'objet continent
+         * @return Genre[] tableau d'objet genre
          */
         public static function findAll() : array
         {
-            $req=MonPdo::getInstance()->prepare("select * from continent");
-            $req->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,"Continent");
+            $req=MonPdo::getInstance()->prepare("select * from genre");
+            $req->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,"genre");
             $req->execute();
             $lesResultats=$req->fetchAll();
             return $lesResultats;
         }
 
         /**
-         * Trouve un continent par son num
+         * Trouve un genre par son num
          *
-         * @param integer $id numéro du continent
-         * @return Continent objet continent trouvé
+         * @param integer $id numéro du genre
+         * @return Genre objet genre trouvé
          */
-        public static function findById(int $id) : Continent
+        public static function findById(int $id) : Genre
         {
-            $req=MonPdo::getInstance()->prepare("select * from continent where num = :id");
-            $req->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,"Continent");
+            $req=MonPdo::getInstance()->prepare("select * from genre where num = :id");
+            $req->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,"Genre");
             $req->bindParam(':id',$id);
             $req->execute();
             $leResultat=$req->fetch();
@@ -91,15 +91,15 @@ class Continent
         }
 
         /**
-         * Ajoute un continent
+         * Ajoute un genre
          *
-         * @param Continent $continent continent à ajouter
+         * @param Genre $genre genre à ajouter
          * @return integer résultat(1 si l'opération à réussi, 0 dans le cas contraire)
          */
-        public static function Add(Continent $continent) :int
+        public static function Add(Genre $genre) :int
         {
-            $req=MonPdo::getInstance()->prepare("insert into continent(libelle) values(:libelle)");
-            $libelle=$continent->getLibelle();
+            $req=MonPdo::getInstance()->prepare("insert into genre(libelle) values(:libelle)");
+            $libelle=$genre->getLibelle();
             $req->bindParam(':libelle',$libelle);
             $nb=$req->execute();
             return $nb;
@@ -107,16 +107,16 @@ class Continent
         }
 
         /**
-         * Permet de modifié un continent
+         * Permet de modifié un genre
          *
-         * @param Continent $continent continent à modifié
+         * @param Genre $genre genre à modifié
          * @return integer résultat(1 si l'opération à réussi, 0 dans le cas contraire)
          */
-        public static function Update(Continent $continent) : int
+        public static function Update(Genre $genre) : int
         {
-            $req=MonPdo::getInstance()->prepare("update continent set libelle= :libelle where num= :id");
-            $libelle=$continent->getLibelle();
-            $num=$continent->getNum();
+            $req=MonPdo::getInstance()->prepare("update genre set libelle= :libelle where num= :id");
+            $libelle=$genre->getLibelle();
+            $num=$genre->getNum();
             $req->bindParam(':libelle',$libelle);
             $req->bindParam(':id',$num);
             $nb=$req->execute();
@@ -124,15 +124,15 @@ class Continent
         }
 
         /**
-         * Permet de supprimer un continent
+         * Permet de supprimer un genre
          *
-         * @param Continent $continent continent à supprimer
+         * @param Genre $genre genre à supprimer
          * @return integer résultat(1 si l'opération à réussi, 0 dans le cas contraire)
          */
-        public static function Delete(Continent $continent) : int
+        public static function Delete(Genre $genre) : int
         {
-            $req=MonPdo::getInstance()->prepare("delete from continent where num = :id");
-            $num=$continent->getNum();
+            $req=MonPdo::getInstance()->prepare("delete from genre where num = :id");
+            $num=$genre->getNum();
             $req->bindParam(':id',$num);
             $nb=$req->execute();
             return $nb; 
@@ -142,5 +142,3 @@ class Continent
     }
 
 ?>
-
-<!--check-->
