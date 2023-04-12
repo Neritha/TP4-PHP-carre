@@ -59,7 +59,7 @@
             }
             header('location: index.php?uc=genre&action=list');
             exit();
-            break;
+            //break;
     }
 ?>
 <!--check-->

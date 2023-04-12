@@ -70,7 +70,7 @@
             }
             header('location: index.php?uc=nationalite&action=list');
             exit();
-            break;
+            //break;
     }
 ?>
 

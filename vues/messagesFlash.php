@@ -11,7 +11,5 @@ if(!empty($_SESSION['message'])){
             </div>';
     }
     $_SESSION['message']=[];
-
-}
-  // la correction de comparaispn en est à ce document si .
+}// la correction de comparaispn en est à ce document si .
 ?>

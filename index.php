@@ -8,7 +8,7 @@ include "models/continent.php";
 include "models/nationalite.php";
 include "models/auteur.php";
 include "models/monPdo.php";
-include "vues/messageFlash.php";
+include "vues/messagesFlash.php";
 
 $uc = empty($_GET['uc']) ? "accueil" : $_GET['uc'];
 

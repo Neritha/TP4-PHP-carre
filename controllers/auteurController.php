@@ -65,7 +65,7 @@
             }
             header('location: index.php?uc=auteur&action=list');
             exit();
-            break;
+            //break;
     }
 
 ?>

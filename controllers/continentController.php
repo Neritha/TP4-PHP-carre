@@ -59,7 +59,7 @@
             }
             header('location: index.php?uc=continents&action=list');
             exit();
-            break;
+            //break;
     }
 ?>
 <!--check-->

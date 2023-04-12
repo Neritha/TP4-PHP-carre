@@ -24,19 +24,18 @@
             </div>
         </div>
     </form>
-  
     <div>    
-      <table class="table table-hover table-striped">
-      <thead class="thead-dark">
-          <tr class="d-flex">
-          <th scope="col" class="col-md-1">Numéro</th>
-          <th scope="col" class="col-md-3">Nom</th>
-          <th scope="col" class="col-md-3">Prénom</th>
-          <th scope="col" class="col-md-3">Nationalité</th>
-          <th scope="col" class="col-md-2">Action</th>
+        <table class="table table-hover table-striped">
+        <thead class="thead-dark">
+        <tr class="d-flex">
+            <th scope="col" class="col-md-1">Numéro</th>
+            <th scope="col" class="col-md-3">Nom</th>
+            <th scope="col" class="col-md-3">Prénom</th>
+            <th scope="col" class="col-md-3">Nationalité</th>
+            <th scope="col" class="col-md-2">Action</th>
           </tr>
-      </thead>
-      <tbody>
+        </thead>
+        <tbody>
           <?php
           foreach($lesAuteurs as $auteur)
           {
@@ -50,7 +49,8 @@
               echo "</tr>";
           }
           ?>
-      </table>
-    </div>
-</tbody>
+        </tbody>  
+    </table>
+</div>
+
 <!--checke-->
