@@ -1,7 +1,7 @@
 <?php
 if(!empty($_SESSION['message'])){
     $mesMessages=$_SESSION['message'];
-    foreach($mesMessages as $key=>$message){
+    foreach($mesMessages as $key=>$mesMessages){
         echo '<div class="container pt-5" >
                 <div class="alert alert-'.$key.' alert-dismissible fade show" role="alert">'.$message.'    
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -11,5 +11,5 @@ if(!empty($_SESSION['message'])){
             </div>';
     }
     $_SESSION['message']=[];
-}// la correction de comparaispn en est à ce document si .
+}
 ?>

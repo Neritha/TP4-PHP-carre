@@ -16,15 +16,15 @@
             include ('vues/formContinent.php');
             break;
         case 'valide' :
-            $continent= new Continent;
-            if(empty($_POST['num']))//cas d'un ajout
+            $continent = new Continent;
+            if(empty($_POST['num']))
             {
                 $continent->setLibelle($_POST['libelle']);
                 $nb=Continent::add($continent);
                 $message = "créer";
             }
 
-            else //cas d'une modification
+            else 
             {
                 $continent->setLibelle($_POST['libelle']);
                 $continent->setNum($_POST['num']);

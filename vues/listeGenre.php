@@ -2,7 +2,7 @@
       <div class="row pt-4">
 
 <div class="col-9"><h2>Liste des Genres</h2></div>
-<div class="col-3"><a href="index.php?uc=genre&action=add" class='btn btn-success'><i class="fas fa-plus-circle"></i>Créer un Genre</a></div>
+<div class="col-3"><a href="index.php?uc=genre&action=add" class='btn btn-success'><i class="fas fa-plus-circle"></i> Créer un Genre</a></div>
 
 </div>    
       <table class="table table-hover table-striped">
