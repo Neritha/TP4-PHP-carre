@@ -46,7 +46,7 @@
                     echo "<td class='col-md-3'>$nationalite->libNation</td>";
                     echo "<td class='col-md-3'>$nationalite->libCont</td>";
                     echo "<td class='col-md-3'><a href='index.php?uc=nationalite&action=update&num=$nationalite->num' class='btn btn-primary'><i class='fas fa-pen'></i></a>
-                            <a href='#modalSuppr' data-toggle='modal' data-message='Voulez-vous supprimer cette nationalitée ?' data-suppr='index.php?uc=nationalite&action=delete&num=$nationalite->num' class='btn btn-danger'><i class='far fa-trash-alt'></i></a></td>";
+                            <a href='index.php?uc=nationalite&action=delete&num=$nationalite->num' data-toggle='modal' data-message='Voulez-vous supprimer cette nationalitée ?' data-suppr='index.php?uc=nationalite&action=delete&num=$nationalite->num' class='btn btn-danger'><i class='far fa-trash-alt'></i></a></td>";
                     echo "</tr>";
                 }
             ?>
