@@ -13,10 +13,8 @@
             <label for='nationalite' > Nationalitée </label>
             <select name="nationalite" class='form-control'>
                 <?php
-                if ($mode == "Ajouter")
-                {
-                    foreach($lesNationalites as $nationalite)
-                    {
+                if ($mode == "Ajouter"){
+                    foreach($lesNationalites as $nationalite){
                         echo  "<option value='".$nationalite->num."'>".$nationalite->libNation."</option>";
                     }
                 }
